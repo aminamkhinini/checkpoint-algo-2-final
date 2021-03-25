@@ -1,0 +1,37 @@
+ALGORITHM Sum Hash Tab: distincts elements
+VAR
+   htab1:HASH_TABLE<integer,integer>
+   Htab2:HASH_TABLE<integer,integer>
+   i,j,aux1,aux2,N,M,key,data,sum:integer
+BEGIN
+    FOR i FROM 1 TO N STEP 1  DO
+    htab1.insert(key[i],data[i])
+    write(htab1)
+END_FOR
+FOR j FROM 1 TO M STEP 1  DO
+    htab2.insert(key[j],data[j])
+    write(htab2)
+END_FOR
+   sum:=0;
+FOR i FROM 1 TO N STEP 1 DO
+  aux1:=htab1.get(key[i],data[i]);
+FOR j FROM 1 TO M STEP 1  DO
+IF (htab1.get(key[i],dat[i])<>htab2.get(key[j],data[j])) THEN
+     Sum=Sum+htab1.get(key[i],dat[i])
+ELSE
+    Sum=Sum
+END_IF
+END_FOR    
+END_FOR
+FOR j FROM 1 TO M STEP 1  DO
+  aux2:=hatb2.(key[j],data[j]);
+FOR i FROM 1 TO N STEP 1 DO
+IF (htab2.get(key[j],data[j])<>htab1.get(key[i],dat[i]) THEN
+    Sum=Sum+htab2.get(key[j],data[j])
+ELSE
+    Sum=Sum
+END_IF
+END_FOR
+END_FOR
+ write("the sum is:",Sum) 
+END
